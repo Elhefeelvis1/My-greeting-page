@@ -1,0 +1,81 @@
+*{
+    box-sizing: border-box;
+    color: rgb(230, 230, 230);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 35px;
+}
+nav img{
+    width: 65px;
+}
+nav .socials{
+    display: flex;
+    gap: 30px;
+}
+nav i{
+    color: white;
+    font-size: 30px;
+}
+.colorPlay{
+    width: 100%;
+    height: 7px;
+    background: linear-gradient(130deg, #662D8C, #ED1E79, #662D8C);
+    background-size: 200% 200%;
+    animation: color-play 5s ease infinite;
+}
+@keyframes color-play { 
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+
+
+main{
+    padding: 0 50px;
+    margin: 100px 0;
+}
+main .intro{
+    margin-bottom: 50px;
+}
+main h1{
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+main p{
+    line-height: 30px;
+    font-size: larger;
+}
+main h2{
+    font-size: 30px;
+    margin-bottom: -5px;
+}
+main ul{
+    line-height: 30px;
+    margin-left: -20px;
+}
+a{
+    text-decoration: none;
+    font-size: 20px;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 65px;
+}
+footer p{
+    position: relative;
+    width: 100%;
+    padding-left: 20px;
+}
