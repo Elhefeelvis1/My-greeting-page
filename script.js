@@ -10,6 +10,7 @@ let main = document.querySelector('main');
 let header = document.querySelector('.container2 .header');
 let content = document.querySelector('.container2 .content');
 let link = document.querySelector('.container2 a');
+let img = document.querySelector('nav img');
 
 // for(i = 0; i < lists.length; i++){
 //     lists[i].addEventListener('click', function(e){
@@ -55,6 +56,9 @@ li22.addEventListener("click", function(){
     link.textContent = "Visit Site";
     header.textContent = projectArr.li2[0];
     content.textContent = projectArr.li2[1];
+})
+img.addEventListener("click", function(){
+    main.classList.remove("active");
 })
 
 let projectArr = {
