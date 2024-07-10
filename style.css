@@ -11,13 +11,14 @@ body{
 }
 
 nav{
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 35px;
+    padding: 5px 15px;
 }
 nav img{
-    width: 65px;
+    width: 45px;
 }
 nav .socials{
     display: flex;
@@ -25,7 +26,7 @@ nav .socials{
 }
 nav i{
     color: white;
-    font-size: 30px;
+    font-size: 20px;
 }
 .colorPlay{
     width: 100%;
@@ -33,6 +34,7 @@ nav i{
     background: linear-gradient(130deg, #662D8C, #ED1E79, #662D8C);
     background-size: 200% 200%;
     animation: color-play 5s ease infinite;
+    -webkit-animation: color-play 5s ease infinite;
 }
 @keyframes color-play { 
     0%{background-position:10% 0%}
@@ -40,37 +42,45 @@ nav i{
     100%{background-position:10% 0%}
 }
 
-
-main{
-    padding: 0 50px;
-    margin: 100px 0;
+.container2{
+    display: none;
 }
-main .intro{
+.container{
+    padding: 0 20px;
+    margin: 30px 0;
+}
+.container .intro{
     margin-bottom: 50px;
 }
-main h1{
+.container h1{
     font-size: 60px;
     margin-bottom: 10px;
 }
-main p{
+.container p{
     line-height: 30px;
     font-size: larger;
 }
-main h2{
+.container h2{
     font-size: 30px;
     margin-bottom: -5px;
 }
-main ul{
+.container ul{
     line-height: 30px;
     margin-left: -20px;
+}
+.ul-desktop{
+    display: none;
+}
+li{
+    font-size: 20px;
+    cursor: pointer;
 }
 a{
     text-decoration: none;
     font-size: 20px;
 }
+
 footer{
-/*     position: absolute; */
-/*     bottom: 0; */
     width: 100%;
     height: 65px;
 }
@@ -80,4 +90,118 @@ footer p{
 /*     padding-left: 20px; */
     float: right;
     padding-right: 20px;
+}
+
+@media screen and (min-width: 1024px) {
+    .colorPlay{
+        display: none;
+    }
+    .ul-mobile{
+        display: none;
+    }
+    .ul-desktop{
+        display: block;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100vh;
+    }
+    nav{
+        padding: 5px 35px;
+    }
+    nav img{
+        width: 65px;
+    }
+    nav i{
+        font-size: 35px;
+    }
+    main{
+        width: 90%;
+        height: 600px;
+        background-color: transparent;
+        perspective: 1000px;
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* Flip */
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+    }
+    .container a:hover{
+        text-decoration: underline;
+    }
+    .container a:hover ~ i{
+        transform: translateX(20px);
+    }
+    .container i{
+        transition: all 0.5s ease;
+    }
+    .container, .container2{
+        margin: 0;
+        padding: 10px;
+        border-radius: 50px;
+        background: linear-gradient(130deg, #662D8C, #ED1E79, #662D8C);
+        background-size: 200% 200%;
+        animation: color-play 5s ease infinite;
+        -webkit-animation: color-play 5s ease infinite;
+        /* Flip */
+        position: absolute;
+        width: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    .container2{
+        display: block;
+        transform: rotateY(180deg);
+    }
+    .container2.active2{
+        transform: rotateX(180deg);
+    }
+    main.active .main {
+        transform: rotateY(180deg);
+    }
+    main.active2 .main {
+        transform: rotateX(180deg);
+    }
+    .subContainer{
+        background-color: black;
+        padding: 0 40px;
+        border-radius: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+
+        
+    }
+    .subContainer .intro{
+        flex-basis: 800px;
+    }
+}
+@media screen and (min-width: 1200px){
+    .subContainer{
+        padding: 0 80px;
+    }
+}
+@media screen and (min-width: 1300px){
+    .subContainer{
+        padding: 20px 80px;
+    }
+}
+@media screen and (min-width: 1400px){
+    .subContainer .intro{
+        flex-basis: 700px;
+    }
+    main{
+        width: 70%;
+    }
 }
